@@ -34,10 +34,16 @@ class HomeCubit extends Cubit<HomeState> {
           ),
         );
       } else {
-        emit(const HomeError(error: "Error fetching posts"));
+        emit(
+          const HomeError(error: "Error fetching posts"),
+        );
       }
     } catch (error) {
-      emit(HomeError(error: error.toString()));
+      emit(
+        HomeError(
+          error: error.toString(),
+        ),
+      );
     }
   }
 }

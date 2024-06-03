@@ -16,13 +16,14 @@ import Flutter
         result(FlutterMethodNotImplemented)
         return
       }
+      
       if let args = call.arguments as? [String: Any],
-         let urlString = args["url"] as? String,
-         let postId = args["postId"] as? Int,// In this case I don't use it just to demonstrate that data can be passed from the channel.
-         let headers = args["headers"] as? [String: String] {
+         let urlString = args["url"] as? String {
+        let postId = args["postId"] as? Int
+        let headers = args["headers"] as? [String: String]
         self?.getChannel(from: urlString, for: postId, headers: headers, result: result)
       } else {
-        result(FlutterError(code: "INVALID_ARGUMENT", message: "URL, Post ID, and headers are required", details: nil))
+        result(FlutterError(code: "INVALID_ARGUMENT", message: "URL is required", details: nil))
       }
     }
     
@@ -30,7 +31,7 @@ import Flutter
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 
-  private func getChannel(from urlString: String, for postId: Int, headers: [String: String], result: @escaping FlutterResult) {
+  private func getChannel(from urlString: String, for postId: Int?, headers: [String: String]?, result: @escaping FlutterResult) {
     let fullUrlString = urlString
     guard let url = URL(string: fullUrlString) else {
       result(FlutterError(code: "INVALID_URL", message: "The URL is invalid", details: nil))
@@ -38,8 +39,10 @@ import Flutter
     }
 
     var request = URLRequest(url: url)
-    for (key, value) in headers {
-      request.addValue(value, forHTTPHeaderField: key)
+    if let headers = headers {
+      for (key, value) in headers {
+        request.addValue(value, forHTTPHeaderField: key)
+      }
     }
 
     let task = URLSession.shared.dataTask(with: request) { data, response, error in

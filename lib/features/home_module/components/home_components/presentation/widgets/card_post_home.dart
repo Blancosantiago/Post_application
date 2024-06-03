@@ -24,7 +24,7 @@ class PostCard extends StatelessWidget {
           nameRoute: HomeModule.commentsPage,
         ),
         child: Card(
-          color: Colors.white,
+          color: Colors.green[100],
           elevation: 4,
           shadowColor: Colors.black,
           child: Padding(

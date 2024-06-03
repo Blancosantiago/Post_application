@@ -18,7 +18,10 @@ class CommentsComponents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Comments $_id"),
+      ),
       body: BlocProvider(
         create: (context) => _commentsCubit,
         child: BlocBuilder<CommentsCubit, CommentsState>(
