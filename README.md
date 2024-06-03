@@ -1,16 +1,25 @@
-# challenge_application
+# Proyecto Flutter: Listado de Posts
 
-A new Flutter project.
+## Descripción del Proyecto
 
-## Getting Started
+Este proyecto es una aplicación desarrollada en Flutter que muestra un listado de publicaciones (posts). Al seleccionar una publicación, se abre una pantalla de detalles que muestra los comentarios asociados a esa publicación.
 
-This project is a starting point for a Flutter application.
+### Características Principales
+- Gestión de Estado con Cubit: Se utiliza Cubit para manejar los estados de la aplicación de manera eficiente.
+- Arquitectura Limpia (Clean Architecture): Implementación de principios de Clean Architecture para mantener un código limpio y mantenible.
+- Inyección de Dependencias: Utilización de patrones de inyección de dependencias para facilitar la gestión de dependencias y mejorar la testabilidad.
+- Manejo de Errores: Implementación de manejo de errores, como la desconexión de internet, para mejorar la experiencia del usuario.
+- Intercambio de Información: Uso de channels para la comunicación entre la parte nativa y Flutter
 
-A few resources to get you started if this is your first Flutter project:
+### Dependencias del Proyecto
+Las siguientes bibliotecas y paquetes se utilizaron en el desarrollo de este proyecto:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- bloc
+- dio
+- equatable
+- flutter_bloc
+- get_it
+- go_router
+- google_fonts
+- internet_connection_checker
+- intl
