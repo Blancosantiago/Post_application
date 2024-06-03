@@ -23,3 +23,6 @@ Las siguientes bibliotecas y paquetes se utilizaron en el desarrollo de este pro
 - google_fonts
 - internet_connection_checker
 - intl
+
+## Setup proyecto
+Para iniciar el proyecto, modifica el archivo launch en la carpeta .vscode. Si usas otro IDE, define la variable APPENVURL con la URL del backend usando Ejemplo --dart-define=APPENVURL=https:asdfgh.com
